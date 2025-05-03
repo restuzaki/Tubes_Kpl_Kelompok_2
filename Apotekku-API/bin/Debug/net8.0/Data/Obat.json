@@ -1,0 +1,22 @@
+[
+  {
+    "id": "OB001",
+    "nama": "Paracetamol",
+    "status": "Terdaftar"
+  },
+  {
+    "id": "OB002",
+    "nama": "Amoxicillin",
+    "status": "Terdaftar"
+  },
+  {
+    "id": "OB003",
+    "nama": "Meth",
+    "status": "Tidak Terdaftar"
+  },
+  {
+    "id": "OB004",
+    "nama": "obat tikus",
+    "status": "Kadaluarsa"
+  }
+]
