@@ -302,6 +302,7 @@
         "StatusCode": 200
       }
     ]
+<<<<<<< HEAD
   },
   {
     "ContainingType": "Apotekku_API.Controllers.UserController",
@@ -365,5 +366,7 @@
       }
     ],
     "ReturnTypes": []
+=======
+>>>>>>> 930029bbddb96becfbf074178db4b7d5d8a8d6e5
   }
 ]
