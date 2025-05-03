@@ -1,8 +1,19 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
+using Apotekku_API.Models;
 
-public class Class1
+namespace Apotekku_API.Models
 {
-	public Class1()
-	{
-	}
+    public class BacaResep
+    {
+        public static List<Obat> AmbilDataObat(string pathFileJson)
+        {
+            string jsonContent = File.ReadAllText(pathFileJson);
+            return JsonSerializer.Deserialize<List<Obat>>(jsonContent, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+        }
+    }
 }

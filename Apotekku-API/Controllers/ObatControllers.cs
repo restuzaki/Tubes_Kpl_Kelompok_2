@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using Apotekku_API.Models;
 
@@ -10,138 +11,80 @@ namespace Apotekku_API.Controllers
     [Route("api/[controller]")]
     public class ObatController : Controller
     {
-        private static string jsonFilePath = "Data/Obat.json";
-        private static List<Obat> dataObat;
+        private static readonly string jsonFilePath = "Data/Obat.json";
+
+        private List<Obat> BacaDataObat()
+        {
+            try
+            {
+                string jsonString = System.IO.File.ReadAllText(jsonFilePath);
+                return JsonSerializer.Deserialize<List<Obat>>(jsonString) ?? new List<Obat>();
+            }
+            catch
+            {
+                return new List<Obat>();
+            }
+        }
+
+        private void SimpanDataObat(List<Obat> data)
+        {
+            string updatedJson = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
+            System.IO.File.WriteAllText(jsonFilePath, updatedJson);
+        }
 
         [HttpGet]
         public ActionResult<List<Obat>> Get()
         {
-            string jsonString = System.IO.File.ReadAllText(jsonFilePath);
-            var result = JsonSerializer.Deserialize<List<Obat>>(jsonString);
-
-            if (result == null)
-            {
-                result = new List<Obat>();
-            }
-
+            var result = BacaDataObat();
             return Ok(result);
         }
 
         [HttpGet("{kode}")]
         public ActionResult<Obat> Get(string kode)
         {
-            string jsonString = System.IO.File.ReadAllText(jsonFilePath);
-            var result = JsonSerializer.Deserialize<List<Obat>>(jsonString);
-
-            if (result == null)
-            {
-                result = new List<Obat>();
-            }
-
-            Obat obat = null;
-
-            
-            foreach (var item in result)
-            {
-                if (item.id == kode)
-                {
-                    obat = item;
-                    break; 
-                }
-            }
-
-            if (obat == null)
-            {
-                return NotFound("Obat tidak ditemukan");
-            }
-
+            var result = BacaDataObat();
+            var obat = result.FirstOrDefault(o => o.id == kode);
+            if (obat == null) return NotFound("Obat tidak ditemukan");
             return Ok(obat);
         }
 
         [HttpPost]
         public ActionResult<Obat> Post([FromBody] Obat obat)
         {
-            string jsonString = System.IO.File.ReadAllText(jsonFilePath);
-            var result = JsonSerializer.Deserialize<List<Obat>>(jsonString);
-            if (result == null)
-            {
-                result = new List<Obat>();
-            }
+            var result = BacaDataObat();
+            if (result.Any(o => o.id == obat.id))
+                return Conflict("Obat dengan ID tersebut sudah ada.");
 
             result.Add(obat);
-
-            string updatedJson = JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true });
-            System.IO.File.WriteAllText(jsonFilePath, updatedJson);
-
+            SimpanDataObat(result);
             return CreatedAtAction(nameof(Get), new { kode = obat.id }, obat);
         }
 
         [HttpPut("{kode}")]
         public ActionResult<Obat> Put(string kode, [FromBody] Obat obat)
         {
-            string jsonString = System.IO.File.ReadAllText(jsonFilePath);
-            var result = JsonSerializer.Deserialize<List<Obat>>(jsonString);
-
-            if (result == null)
-            {
-                result = new List<Obat>();
-            }
-
-            Obat existingObat = null;
-            foreach (var item in result)
-            {
-                if (item.id == kode)
-                {
-                    existingObat = item;
-                    break;
-                }
-            }
-
-            if (existingObat == null)
-            {
-                return NotFound("Obat tidak ditemukan");
-            }
+            var result = BacaDataObat();
+            var existingObat = result.FirstOrDefault(o => o.id == kode);
+            if (existingObat == null) return NotFound("Obat tidak ditemukan");
 
             existingObat.nama = obat.nama;
             existingObat.status = obat.status;
+            existingObat.harga = obat.harga;
+            existingObat.kadaluarsa = obat.kadaluarsa;
 
-            string updatedJson = JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true });
-            System.IO.File.WriteAllText(jsonFilePath, updatedJson);
-
+            SimpanDataObat(result);
             return Ok(existingObat);
         }
 
         [HttpDelete("{kode}")]
         public ActionResult Delete(string kode)
         {
-            string jsonString = System.IO.File.ReadAllText(jsonFilePath);
-            var result = JsonSerializer.Deserialize<List<Obat>>(jsonString);
-
-            if (result == null)
-            {
-                result = new List<Obat>();
-            }
-
-            Obat obatToDelete = null;
-            foreach (var item in result)
-            {
-                if (item.id == kode)
-                {
-                    obatToDelete = item;
-                    break;
-                }
-            }
-
-            if (obatToDelete == null)
-            {
-                return NotFound("Obat tidak ditemukan");
-            }
+            var result = BacaDataObat();
+            var obatToDelete = result.FirstOrDefault(o => o.id == kode);
+            if (obatToDelete == null) return NotFound("Obat tidak ditemukan");
 
             result.Remove(obatToDelete);
-
-            string updatedJson = JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true });
-            System.IO.File.WriteAllText(jsonFilePath, updatedJson);
-
+            SimpanDataObat(result);
             return NoContent();
         }
     }
