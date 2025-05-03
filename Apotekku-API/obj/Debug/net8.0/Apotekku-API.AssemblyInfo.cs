@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Apotekku-API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+890273c41c0c121c14491694a00e71a00b990cba")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+137286f5c93fe14cf23630b62fcde4616225aeb9")]
->>>>>>> 930029bbddb96becfbf074178db4b7d5d8a8d6e5
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+392067cd2a3f72081beaac5a26dc7d6d30252111")]
 [assembly: System.Reflection.AssemblyProductAttribute("Apotekku-API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Apotekku-API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

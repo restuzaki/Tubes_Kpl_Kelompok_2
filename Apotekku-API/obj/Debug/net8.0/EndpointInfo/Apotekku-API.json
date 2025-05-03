@@ -517,7 +517,6 @@
           }
         }
       }
-<<<<<<< HEAD
     },
     "/api/User": {
       "get": {
@@ -634,8 +633,6 @@
           }
         }
       }
-=======
->>>>>>> 930029bbddb96becfbf074178db4b7d5d8a8d6e5
     }
   },
   "components": {
@@ -662,13 +659,10 @@
           "kadaluarsa": {
             "type": "string",
             "nullable": true
-<<<<<<< HEAD
-=======
           },
           "stok": {
             "type": "integer",
             "format": "int32"
->>>>>>> 930029bbddb96becfbf074178db4b7d5d8a8d6e5
           }
         },
         "additionalProperties": false
@@ -708,7 +702,6 @@
           }
         },
         "additionalProperties": false
-<<<<<<< HEAD
       },
       "User": {
         "type": "object",
@@ -731,8 +724,6 @@
           }
         },
         "additionalProperties": false
-=======
->>>>>>> 930029bbddb96becfbf074178db4b7d5d8a8d6e5
       }
     }
   }

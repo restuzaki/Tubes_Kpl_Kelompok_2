@@ -15,5 +15,13 @@ namespace Apotekku_API.Models
 
         
         public string Role { get; set; }
+
+        public User(string nama, string password, string role)
+        {
+            Nama = nama;
+            Password = password;
+            Role = role;
+        }
     }
 }
+

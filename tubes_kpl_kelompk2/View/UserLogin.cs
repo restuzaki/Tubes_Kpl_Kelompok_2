@@ -1,64 +1,48 @@
 ﻿using System;
-using MySql.Data.MySqlClient;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text.Json;
+using Apotekku_API.Models;
 
-namespace tubes_kpl_kelompk2
+public class UserLogin
 {
-    
+    private readonly string jsonFilePath = "Data/User.json";
 
-    public class UserLogin
+    public User Login()
     {
-        private readonly string connectionString;
+        Console.Write("Masukkan nama: ");
+        string nama = Console.ReadLine();
 
-        public UserLogin(string connectionString)
+        Console.Write("Masukkan password: ");
+        string password = Console.ReadLine();
+
+        var users = LoadUsers();
+
+        var user = users.FirstOrDefault(u => u.Nama == nama && u.Password == password);
+        if (user != null)
         {
-            this.connectionString = connectionString;
+            Console.WriteLine($"Login berhasil. Selamat datang, {user.Nama} dengan role {user.Role}.");
+            return user;
         }
-
-        public User Login()
+        else
         {
-            Console.Write("Masukkan nama: ");
-            string nama = Console.ReadLine();
+            Console.WriteLine("Nama atau password salah.");
+            return null;
+        }
+    }
 
-            Console.Write("Masukkan password: ");
-            string password = Console.ReadLine();
-
-            using (var connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    string query = "SELECT nama, password, role FROM users WHERE nama = @nama AND password = @password";
-                    using (var cmd = new MySqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@nama", nama);
-                        cmd.Parameters.AddWithValue("@password", password);
-
-                        using (var reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                Console.WriteLine("Login berhasil.");
-                                return new User
-                                {
-                                    Nama = reader.GetString("nama"),
-                                    Password = reader.GetString("password"),
-                                    Role = reader.GetString("role")
-                                };
-                            }
-                            else
-                            {
-                                Console.WriteLine("Nama atau password salah.");
-                                return null;
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Terjadi kesalahan koneksi: " + ex.Message);
-                    return null;
-                }
-            }
+    private List<User> LoadUsers()
+    {
+        try
+        {
+            string json = File.ReadAllText(jsonFilePath);
+            return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Gagal membaca file JSON: " + ex.Message);
+            return new List<User>();
         }
     }
 }

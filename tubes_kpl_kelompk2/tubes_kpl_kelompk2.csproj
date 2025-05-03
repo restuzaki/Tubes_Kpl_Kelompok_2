@@ -19,4 +19,8 @@
 
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Apotekku-API\Apotekku-API.csproj" />
+  </ItemGroup>
+
 </Project>
