@@ -9,10 +9,11 @@
 
   <ItemGroup>
 
-    <PackageReference Include="MySql.Data" Version="9.3.0" />
-
     <Folder Include="Models\" />
+
     <Folder Include="View\" />
+
+    <PackageReference Include="MySql.Data" Version="9.3.0" />
 
   </ItemGroup>
 
