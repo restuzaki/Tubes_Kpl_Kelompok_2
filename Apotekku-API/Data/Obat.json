@@ -4,69 +4,80 @@
         "nama": "Paracetamol",
         "status": "Terdaftar",
         "harga": 5000,
-        "kadaluarsa": "2026-01-15"
+        "kadaluarsa": "2026-01-15",
+        "stok": 250
     },
-    {
-        "id": "OB002",
-        "nama": "Amoxicillin",
-        "status": "Terdaftar",
-        "harga": 12000,
-        "kadaluarsa": "2025-11-30"
-    },
-    {
-        "id": "OB003",
-        "nama": "Meth",
-        "status": "Tidak Terdaftar",
-        "harga": 0,
-        "kadaluarsa": null
-    },
-    {
-        "id": "OB004",
-        "nama": "Ibuprofen",
-        "status": "Kadaluarsa",
-        "harga": 8000,
-        "kadaluarsa": "2023-09-10"
-    },
-    {
-        "id": "OB005",
-        "nama": "Cetirizine",
-        "status": "Terdaftar",
-        "harga": 6000,
-        "kadaluarsa": "2025-08-20"
-    },
-    {
-        "id": "OB006",
-        "nama": "Omeprazole",
-        "status": "Terdaftar",
-        "harga": 10000,
-        "kadaluarsa": "2026-02-14"
-    },
-    {
-        "id": "OB007",
-        "nama": "Loperamide",
-        "status": "Terdaftar",
-        "harga": 4000,
-        "kadaluarsa": "2025-07-01"
-    },
-    {
-        "id": "OB008",
-        "nama": "Aspirin",
-        "status": "Kadaluarsa",
-        "harga": 7000,
-        "kadaluarsa": "2023-12-31"
-    },
-    {
-        "id": "OB009",
-        "nama": "Dextromethorphan",
-        "status": "Terdaftar",
-        "harga": 5500,
-        "kadaluarsa": "2025-10-10"
-    },
-    {
-        "id": "OB010",
-        "nama": "Vitamin C 500mg",
-        "status": "Terdaftar",
-        "harga": 3000,
-        "kadaluarsa": "2026-03-22"
-    }
+  {
+    "id": "OB002",
+    "nama": "Amoxicillin",
+    "status": "Terdaftar",
+    "harga": 12000,
+    "kadaluarsa": "2025-11-30",
+    "stok": 185
+
+  },
+  {
+    "id": "OB003",
+    "nama": "Meth",
+    "status": "Tidak Terdaftar",
+    "harga": 0,
+    "kadaluarsa": null,
+    "stok": 77
+  },
+  {
+    "id": "OB004",
+    "nama": "Ibuprofen",
+    "status": "Kadaluarsa",
+    "harga": 8000,
+    "kadaluarsa": "2023-09-10",
+    "stok": 150
+  },
+  {
+    "id": "OB005",
+    "nama": "Cetirizine",
+    "status": "Terdaftar",
+    "harga": 6000,
+    "kadaluarsa": "2025-08-20",
+    "stok": 200
+  },
+  {
+    "id": "OB006",
+    "nama": "Omeprazole",
+    "status": "Terdaftar",
+    "harga": 10000,
+    "kadaluarsa": "2026-02-14",
+    "stok": 150
+  },
+  {
+    "id": "OB007",
+    "nama": "Loperamide",
+    "status": "Terdaftar",
+    "harga": 4000,
+    "kadaluarsa": "2025-07-01",
+    "stok": 109
+  },
+  {
+    "id": "OB008",
+    "nama": "Aspirin",
+    "status": "Kadaluarsa",
+    "harga": 7000,
+    "kadaluarsa": "2023-12-31",
+    "stok": 98
+  },
+  {
+    "id": "OB009",
+    "nama": "Dextromethorphan",
+    "status": "Terdaftar",
+    "harga": 5500,
+    "kadaluarsa": "2025-10-10",
+    "stok": 75
+  },
+  {
+    "id": "OB010",
+    "nama": "Vitamin C 500mg",
+    "status": "Terdaftar",
+    "harga": 3000,
+    "kadaluarsa": "2026-03-22",
+    "stok": 25
+  }
 ]

@@ -1,5 +1,51 @@
 [
   {
+    "ContainingType": "Apotekku_API.Controllers.BacaResepController",
+    "Method": "GetAllObat",
+    "RelativePath": "api/BacaResep",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Apotekku_API.Models.Obat, Apotekku-API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Apotekku_API.Controllers.BacaResepController",
+    "Method": "GetObatById",
+    "RelativePath": "api/BacaResep/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Apotekku_API.Models.Obat",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Apotekku_API.Controllers.ObatController",
     "Method": "Get",
     "RelativePath": "api/Obat",
@@ -236,5 +282,25 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Apotekku_API.Controllers.PenyakitAnalisisController",
+    "Method": "Get",
+    "RelativePath": "api/PenyakitAnalisis",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[PenyakitAnalisis, Apotekku-API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
