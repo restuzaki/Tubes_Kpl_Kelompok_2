@@ -40,3 +40,14 @@ C:\Users\ASUS\source\repos\Tubes_Kpl_Kelompok_2\Apotekku-API\obj\Debug\net8.0\re
 C:\Users\macbookpro\Tubes_Kpl_Kelompok_2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.dll
 C:\Users\macbookpro\Tubes_Kpl_Kelompok_2\Apotekku-API\obj\Debug\net8.0\refint\Apotekku-API.dll
 C:\Users\macbookpro\Tubes_Kpl_Kelompok_2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.pdb
+D:\Kpl\tubes_kpl_kelompk2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.csproj.AssemblyReference.cache
+D:\Kpl\tubes_kpl_kelompk2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kpl\tubes_kpl_kelompk2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.AssemblyInfoInputs.cache
+D:\Kpl\tubes_kpl_kelompk2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.AssemblyInfo.cs
+D:\Kpl\tubes_kpl_kelompk2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.csproj.CoreCompileInputs.cache
+D:\Kpl\tubes_kpl_kelompk2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.MvcApplicationPartsAssemblyInfo.cs
+D:\Kpl\tubes_kpl_kelompk2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.MvcApplicationPartsAssemblyInfo.cache
+D:\Kpl\tubes_kpl_kelompk2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.sourcelink.json
+D:\Kpl\tubes_kpl_kelompk2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.dll
+D:\Kpl\tubes_kpl_kelompk2\Apotekku-API\obj\Debug\net8.0\refint\Apotekku-API.dll
+D:\Kpl\tubes_kpl_kelompk2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.pdb
