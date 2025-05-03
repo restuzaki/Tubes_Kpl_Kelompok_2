@@ -37,3 +37,6 @@ C:\Users\ASUS\source\repos\Tubes_Kpl_Kelompok_2\Apotekku-API\obj\Debug\net8.0\re
 C:\Users\ASUS\source\repos\Tubes_Kpl_Kelompok_2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.pdb
 C:\Users\ASUS\source\repos\Tubes_Kpl_Kelompok_2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.genruntimeconfig.cache
 C:\Users\ASUS\source\repos\Tubes_Kpl_Kelompok_2\Apotekku-API\obj\Debug\net8.0\ref\Apotekku-API.dll
+C:\Users\macbookpro\Tubes_Kpl_Kelompok_2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.dll
+C:\Users\macbookpro\Tubes_Kpl_Kelompok_2\Apotekku-API\obj\Debug\net8.0\refint\Apotekku-API.dll
+C:\Users\macbookpro\Tubes_Kpl_Kelompok_2\Apotekku-API\obj\Debug\net8.0\Apotekku-API.pdb
