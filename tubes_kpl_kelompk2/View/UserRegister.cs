@@ -1,72 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using System.Text.Json;
+using Apotekku_API.Models;
 
+public class UserRegister
+{
+    private readonly string jsonFilePath = "Data/User.json";
 
-
-    
-
-    public class UserRegister
+    public void Register()
     {
-        private readonly string connectionString;
+        Console.Write("Masukkan nama: ");
+        string nama = Console.ReadLine();
 
-        public UserRegister(string connectionString)
+        Console.Write("Masukkan password: ");
+        string password = Console.ReadLine();
+
+        var users = LoadUsers();
+
+        if (users.Any(u => u.Nama == nama))
         {
-            this.connectionString = connectionString;
+            Console.WriteLine("Username sudah digunakan.");
+            return;
         }
 
-        public void Register()
+        var newUser = new User(nama, password, "buyer")
         {
-            Console.Write("Masukkan nama: ");
-            string nama = Console.ReadLine();
+            Id = users.Count > 0 ? users.Max(u => u.Id) + 1 : 1,
+            Nama = nama,
+            Password = password,
+            Role = "buyer"
+        };
 
-            Console.Write("Masukkan password: ");
-            string password = Console.ReadLine();
+        users.Add(newUser);
+        SaveUsers(users);
 
-            
-            string role = "buyer";
+        Console.WriteLine("Registrasi berhasil sebagai buyer.");
+    }
 
-            using (var connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    
-                    string checkQuery = "SELECT COUNT(*) FROM users WHERE nama = @nama";
-                    using (var cmd = new MySqlCommand(checkQuery, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@nama", nama);
-
-                        var count = Convert.ToInt32(cmd.ExecuteScalar());
-                        if (count > 0)
-                        {
-                            Console.WriteLine("Username sudah digunakan.");
-                            return;
-                        }
-                    }
-
-                    
-                    string query = "INSERT INTO users (nama, password, role) VALUES (@nama, @password, @role)";
-                    using (var cmd = new MySqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@nama", nama);
-                        cmd.Parameters.AddWithValue("@password", password);  
-                        cmd.Parameters.AddWithValue("@role", role);
-
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    Console.WriteLine("Registrasi berhasil sebagai buyer.");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Terjadi kesalahan: " + ex.Message);
-                }
-            }
+    private List<User> LoadUsers()
+    {
+        try
+        {
+            string json = File.ReadAllText(jsonFilePath);
+            return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
+        }
+        catch
+        {
+            return new List<User>();
         }
     }
 
+    private void SaveUsers(List<User> users)
+    {
+        string updatedJson = JsonSerializer.Serialize(users, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText(jsonFilePath, updatedJson);
+    }
+}

@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Apotekku_API.Models;
-<<<<<<< HEAD
 
-=======
->>>>>>> 930029bbddb96becfbf074178db4b7d5d8a8d6e5
 
 namespace Apotekku_API.Controllers
 {

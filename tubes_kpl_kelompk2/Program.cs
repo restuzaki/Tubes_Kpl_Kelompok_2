@@ -1,13 +1,14 @@
 ﻿using System;
 using tubes_kpl_kelompk2;
+using Apotekku_API.Models;
+using User = Apotekku_API.Models.User;
 
 class Program
 {
     static void Main()
     {
-        string connStr = "Server=localhost;Database=apotik;Uid=root;Pwd=;";
-        UserLogin userlogin = new UserLogin(connStr);
-        UserRegister userregister = new UserRegister(connStr);
+        UserLogin userlogin = new UserLogin();      
+        UserRegister userregister = new UserRegister();
 
         while (true)
         {
@@ -20,7 +21,7 @@ class Program
 
             if (pilihan == "1")
             {
-                tubes_kpl_kelompk2.User user = userlogin.Login();
+                User? user = userlogin.Login();
                 if (user != null)
                 {
                     Console.WriteLine($"\nSelamat datang, {user.Nama}!");
