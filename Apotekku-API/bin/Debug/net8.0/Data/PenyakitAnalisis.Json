@@ -1,0 +1,26 @@
+[
+  {
+    "NamaPenyakit": "Flu",
+    "JumlahKasus": 30
+  },
+  {
+    "NamaPenyakit": "HIV",
+    "JumlahKasus": 20
+  },
+  {
+    "NamaPenyakit": "COVID-19",
+    "JumlahKasus": 15
+  },
+  {
+    "NamaPenyakit": "Malaria",
+    "JumlahKasus": 5
+  },
+  {
+    "NamaPenyakit": "AIDS",
+    "JumlahKasus": 18
+  },
+  {
+    "NamaPenyakit": "DBD",
+    "JumlahKasus": 8
+  }
+]
