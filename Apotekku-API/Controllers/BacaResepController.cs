@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Apotekku_API.Models;
-using Apotekku_API.Services;
 
 namespace Apotekku_API.Controllers
 {
